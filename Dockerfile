@@ -18,7 +18,7 @@ RUN apt-get update && \
 RUN mkdir -p /opt/daq && \
     cd /opt/daq && \
     git clone https://github.com/snort3/libdaq.git && \
-    cd daq && \
+    cd libdaq && \
     ./configure && \
     make && \
     make install
@@ -26,7 +26,7 @@ RUN mkdir -p /opt/daq && \
 RUN mkdir -p /opt/snort && \
     cd /opt/snort && \
     git clone https://github.com/snort3/snort3.git && \
-    cd snort && \
+    cd snort3 && \
     ./configure --prefix=/opt/snort \
                 --enable-daq \
                 --enable-perfmon \
