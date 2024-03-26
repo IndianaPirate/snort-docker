@@ -1,0 +1,19 @@
+# Règles Snort
+
+# Alerte sur les pings
+alert icmp any any -> any any (msg:"ICMP Ping"; sid:1;)
+
+# Alerte sur les scans de ports TCP
+alert tcp any any -> any any (msg:"TCP Port Scan"; sid:2;)
+
+# Alerte sur les attaques SYN flood
+alert tcp any any -> any any (flags:S; msg:"SYN Flood Attack"; sid:3;)
+
+# Bloquer les attaques SSH
+drop tcp any any -> any 22 (msg:"SSH Attack"; sid:4;)
+
+# Autoriser le trafic HTTP
+pass tcp any any -> any 80 (msg:"HTTP Traffic"; sid:5;)
+
+# Autoriser le trafic HTTPS
+pass tcp any any -> any 443 (msg:"HTTPS Traffic"; sid:6;)
