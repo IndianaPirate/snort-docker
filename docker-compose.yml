@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  snort:
+    image: snort
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - /var/log/snort:/var/log/snort
+    ports:
+      - "8089:8080"
+    networks:
+      - snortnet
+
+networks:
+  snortnet:
+    driver: bridge
+
