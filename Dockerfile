@@ -13,7 +13,8 @@ RUN apt-get update && \
         liblzma-dev \
         bison \
         flex \
-        ethtool
+        ethtool \
+	wget
 RUN apt-get install -yq --reinstall ca-certificates && \
 	mkdir /usr/local/share/ca-certificates/cacert.org && \
 	wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt && \
