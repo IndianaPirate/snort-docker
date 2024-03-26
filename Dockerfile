@@ -14,7 +14,7 @@ RUN apt-get update && \
         bison \
         flex \
         ethtool
-RUN apt-get install --reinstall ca-certificates && \
+RUN apt-get install -yq --reinstall ca-certificates && \
 	mkdir /usr/local/share/ca-certificates/cacert.org && \
 	wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt && \
 	update-ca-certificates && \
